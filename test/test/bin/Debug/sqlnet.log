@@ -1,0 +1,140 @@
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.185.32.163)(PORT=1522))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=proorcl.mes.local)(CID=(PROGRAM=C:\Users\93543\Documents\Visual Studio 2015\Projects\test\test\bin\Debug\iEMS-Setting.vshost.exe)(HOST=T1ANB0021)(USER=93543))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 25-11月-2017 11:31:11
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS:作業逾時
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 作業逾時
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.185.32.163)(PORT=1522))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=proorcl.mes.local)(CID=(PROGRAM=C:\Users\93543\Documents\Visual Studio 2015\Projects\test\test\bin\Debug\iEMS-Setting.vshost.exe)(HOST=T1ANB0021)(USER=93543))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 25-11月-2017 11:32:15
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS:作業逾時
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 作業逾時
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.185.32.163)(PORT=1522))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=proorcl.mes.local)(CID=(PROGRAM=C:\Users\93543\Documents\Visual Studio 2015\Projects\test\test\bin\Debug\iEMS-Setting.vshost.exe)(HOST=T1ANB0021)(USER=93543))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 25-11月-2017 11:34:22
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS:作業逾時
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 作業逾時
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.185.32.163)(PORT=1522))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=proorcl.mes.local)(CID=(PROGRAM=C:\Users\93543\Documents\Visual Studio 2015\Projects\test\test\bin\Debug\iEMS-Setting.vshost.exe)(HOST=T1ANB0021)(USER=93543))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 25-11月-2017 11:35:20
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS:作業逾時
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 作業逾時
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.185.32.163)(PORT=1522))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=proorcl.mes.local)(CID=(PROGRAM=C:\Users\93543\Documents\Visual Studio 2015\Projects\test\test\bin\Debug\iEMS-Setting.vshost.exe)(HOST=T1ANB0021)(USER=93543))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 25-11月-2017 11:36:31
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS:作業逾時
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 作業逾時
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.185.32.152)(PORT=1522))(CONNECT_DATA=(SERVICE_NAME=proorcl.mes.local)(CID=(PROGRAM=C:\Users\93543\Documents\Visual Studio 2015\Projects\test\test\bin\Debug\iEMS-Setting.vshost.exe)(HOST=T1ANB0021)(USER=93543))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 12-6月 -2018 14:50:45
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS:作業逾時
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 作業逾時
+    nt secondary err code: 60
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12535, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.185.32.152)(PORT=1522))(CONNECT_DATA=(SERVICE_NAME=proorcl.mes.local)(CID=(PROGRAM=C:\Users\93543\Documents\Visual Studio 2015\Projects\test\test\bin\Debug\iEMS-Setting.vshost.exe)(HOST=T1ANB0021)(USER=93543))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 12-6月 -2018 14:53:44
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12535
+    TNS-12535: TNS:作業逾時
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: 作業逾時
+    nt secondary err code: 60
+    nt OS err code: 0

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PublishUrlHistory>C:\Users\93543\Desktop\iEMS-Setting AQA\|C:\Users\93543\Desktop\iEMS-Setting SPPD\|C:\Users\93543\Desktop\iEMS-Setting AQA.5\|C:\Users\93543\Desktop\iEMS-Setting-SPPD\|C:\Users\93543\Desktop\iEMS-Setting\</PublishUrlHistory>
+    <InstallUrlHistory>http://10.185.110.1/iEMS-Setting/|http://10.185.110.4/iEMS-Setting/|http://10.185.110.5/iEMS-Setting/|http://10.185.110.1//iEMS-Setting/|\\10.185.110.1\d%24\iEMS-Setting\</InstallUrlHistory>
+    <SupportUrlHistory />
+    <UpdateUrlHistory>http://10.185.110.1/iEMS-Setting/|http://10.185.110.4/iEMS-Setting/|http://10.185.110.1//iEMS-Setting/|\\10.185.110.1\eCIM\|\\10.185.126.1/Jim/iEMS-Setting/</UpdateUrlHistory>
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>zh-TW</FallbackCulture>
+    <VerifyUploadedFiles>true</VerifyUploadedFiles>
+    <ProjectView>ProjectFiles</ProjectView>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
+  </PropertyGroup>
+</Project>

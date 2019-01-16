@@ -1,0 +1,9 @@
+C:\Users\93543\Documents\Visual Studio 2015\Projects\test\test\obj\Release\iEMS_Setting.eMailSetting.resources
+C:\Users\93543\Documents\Visual Studio 2015\Projects\test\test\obj\Release\iEMS_Setting.eMailView.resources
+C:\Users\93543\Documents\Visual Studio 2015\Projects\test\test\obj\Release\iEMS_Setting.iEMS.resources
+C:\Users\93543\Documents\Visual Studio 2015\Projects\test\test\obj\Release\iEMS_Setting.ParameterSetting.resources
+C:\Users\93543\Documents\Visual Studio 2015\Projects\test\test\obj\Release\iEMS_Setting.Properties.Resources.resources
+C:\Users\93543\Documents\Visual Studio 2015\Projects\test\test\obj\Release\iEMS_Setting.ViewLimitGroup.resources
+C:\Users\93543\Documents\Visual Studio 2015\Projects\test\test\obj\Release\iEMS_Setting.csproj.GenerateResource.Cache
+C:\Users\93543\Documents\Visual Studio 2015\Projects\test\test\obj\Release\iEMS-Setting.exe
+C:\Users\93543\Documents\Visual Studio 2015\Projects\test\test\bin\Release\iEMS-Setting.exe.config

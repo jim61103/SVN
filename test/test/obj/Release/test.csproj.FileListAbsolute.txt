@@ -1,0 +1,16 @@
+c:\users\93543\documents\visual studio 2015\Projects\test\test\bin\Release\test.exe.config
+c:\users\93543\documents\visual studio 2015\Projects\test\test\bin\Release\test.exe
+c:\users\93543\documents\visual studio 2015\Projects\test\test\bin\Release\test.pdb
+c:\users\93543\documents\visual studio 2015\Projects\test\test\obj\Release\test.Form1.resources
+c:\users\93543\documents\visual studio 2015\Projects\test\test\obj\Release\test.Properties.Resources.resources
+c:\users\93543\documents\visual studio 2015\Projects\test\test\obj\Release\test.csproj.GenerateResource.Cache
+c:\users\93543\documents\visual studio 2015\Projects\test\test\obj\Release\test.exe
+c:\users\93543\documents\visual studio 2015\Projects\test\test\obj\Release\test.pdb
+c:\users\93543\documents\visual studio 2015\Projects\test\test\bin\Release\Resources\Regist.png
+c:\users\93543\documents\visual studio 2015\Projects\test\test\bin\Release\Resources\delete.png
+c:\users\93543\documents\visual studio 2015\Projects\test\test\bin\Release\Resources\edit.png
+c:\users\93543\documents\visual studio 2015\Projects\test\test\bin\Release\Resources\emailsetting.png
+c:\users\93543\documents\visual studio 2015\Projects\test\test\bin\Release\Resources\parametersetting.png
+c:\users\93543\documents\visual studio 2015\Projects\test\test\bin\Release\Resources\pastedImage.png
+c:\users\93543\documents\visual studio 2015\Projects\test\test\bin\Release\Resources\setting.png
+c:\users\93543\documents\visual studio 2015\Projects\test\test\bin\Release\Resources\Regist1.png

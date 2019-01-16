@@ -1,0 +1,160 @@
+7/12 1.0.0.15
+調整按下Find後，欄位順序(Division => 最後面，Package => Recipe後 )
+
+7/13 1.0.0.16
+調整Copy function ，copy後再選機台。
+
+7/13 1.0.0.17
+開啟時依照電腦位元版本，撈不同路徑的obj檔案登入。
+C:\\Program Files(x86)\\Amkor
+C:\\Program Files\\Amkor
+
+7/20 1.0.0.29 (SPPD:29  UAT:28)
+修改Parameter Setting時 add remove button不會依照視窗大小移動位子，限制視窗最小的size。
+Main 右上功能按鈕靠右對齊。
+
+8/11 1.0.0.31 (SPPD:31 UAT:29)
+Approved時，如RecipeName為*，會比對Parameter是否有設定過，如果有，不行Approved。
+
+ViewLimitGroup
+ if (txtRecipe.Text.Equals("*") && isThereSameParameter(vo))
+  {               
+                return false;
+  }
+
+
+9/2 1.0.0.32(SPPD:32 UAT:31)
+Submit use auto commit
+
+9/9 1.0.0.36(SPPD:36 UAT:33)
+fix tcTab2 out of index
+
+11/25 1.0.0.37 (SPPD:37 UAT:34)
+fix submit parameter revision will not increase issue
+
+12/12 1.0.0.38 (SPPD:38 UAT:36)
+fix parameter setting 畫面解析問題
+
+12/28 1.0.0.45 (SPPD:45 UAT:37)
+remove equipNo 空格，register、save、submit時，Equip No 一定要選
+
+1/17  1.0.0.47 (SPPD:47 UAT:39)
+OpenForCopy fix vo submittime、approvetime、edittime issue
+
+3/30 1.0.0.48 (SPPD:48 UAT40)
+fix DLP can't use issue, and add Encoder.cs  Config.cs
+get evnironment form config.
+add DLP DB connecttion
+
+3/31 1.0.0.49 (SPPD:49 UAT41)
+add isUAT flag=true for 110.1 used
+
+4/11 1.0.0.50 (SPPD:50 UAT43)
+add double click will add create time for 增加object query的精準
+
+4/17 1.0.0.53 (SPPD:53 UAT47)
+fix reject will not show parameter issue 
+
+4/19 1.0.0.55 (SPPD:55 UAT49)
+fix when edit, new parameter register fail issue.(set email default value)
+
+7/18 1.0.0.58 (SPPD:58 UAT52)
+add when Approved will send mail to Chuck and Jim
+add Parameter setting, max min value check
+
+7/19 1.0.0.59 (SPPD:59 UAT:54)
+Fix dicEQPNo, use Division and EQPModel to find EQPNo 
+
+7/20 1.0.0.60 (SPPD:60 UAT:56)
+add when send mail, add EqpNo.
+
+8/17 1.0.0.62 (SPPD:62 UAT:58)
+add kill process when form load.
+add code to let window on top
+
+11/3 1.0.0.67 (SPPD:67 UAT:62)
+add Parameter Name Frozen / fillGridView() Frozen = true
+
+12/7 1.0.0.68 (SPPD:68 UAT:65)
+add register default Hold Lot M/C checked.
+
+02/01 1.0.0.69 (SPPD:69 UAT:66)
+for fix parameter DB add column, insert will error. 
+
+02/14 1.0.0.70 (SPPD:70 UAT:67)
+add Monitor time and fix when submit insert history revision wrong. 
+
+02/23 1.0.0.71 (SPPD:71 UAT:68)
+for fix insert master, backuptime is null cause can not insert to DB
+
+02/23 1.0.0.71 (UAT:69)
+for add compare function and change color.
+
+03/29 1.0.0.71 (UAT:70)
+add get EFGP SN and insert to DB,
+Before Edit and Delete will Validation EFGPSN.
+
+05/11 1.0.0.72
+edit check Step Name & check Value validation(ViewLimitGroup line:1581) 
+add PassEFGP flag for test(ViewLimitGroup Line:2652)
+add logic to pass Valide input , T3 don't needs select Eqp.(Main line:1095) 
+
+5/29 1.0.0.74
+for approve will send to EFGP
+
+5/29 1.0.0.75
+for T3 can skip EQP No input validation(can be null)
+
+6/8 1.0.0.79(UAT)
+for add EFGP form field, let EFGP auto select next approve id.
+
+6/21 1.0.0.79(SPPD:80 UAT:80)
+for Approve will not update edittime and editby
+edit getParameter for get current revision parameter.
+
+6/25 1.0.0.81 (SPPD:81)
+add alert message for can not connect EasyFlow Server
+
+6/26 1.0.0.82 (SPPD:82)
+fix copy can not show parameter issue
+
+6/26 1.0.0.83 (SPPD:83)
+Disable Compare version number
+
+8/27 1.0.0.84 (SPPD:84 UAT:81)
+change (!sDivision.StartsWith("T3")) to (!sDivision.Contains("DPS")) for T6 DPS
+
+8/30 1.0.0.85 (SPPD:86 UAT:82)
+miss change previous version.
+
+9/7 1.0.0.87 (SPPD:87 UAT:83)
+add write EasyFlow Log in C:/FDC_Log/
+if Recipe Name is null , can not submit and Edit.
+
+10/30 1.0.0.88 (SPPD:88 UAT:84)
+change when approve, isThereSameParameter check duplicate show wrong message.
+
+11/1 1.0.0.90 (SPPD:90 UAT:85)
+取消 txtRecipe 行為強制大寫
+
+11/2 
+開啟Recipe name強制轉大寫功能，PROD目前使用版號88
+
+11/22 1.0.0.90 (SPPD:93 UAT:87)
+新增登入頁面，取消讀取檔案登入的方式
+
+11/26 UAT 91
+新增SaveToCSV，可以將Approve以及Submit的資料匯出CSV
+
+11/28 UAT92
+當Copy，按下submit時會check Parameters 是否有該Parameter，不存在即Submit失敗。
+1.0.0.94 (SPPD:94 UAT:92)
+
+11/29 1.0.0.90 (SPPD:97 UAT:94)
+For T3 insert second flag to DB, always insert 0
+
+12/18 1.0.0.98 ((SPPD:98 UAT:95))
+For T6 use T3 rule
+
+12/24 1.0.1.1 
+For Fix reject needs easyflow approve issue
