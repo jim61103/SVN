@@ -1,0 +1,9 @@
+c:\users\93543\documents\visual studio 2015\Projects\Delete BurnOff\Delete BurnOff\bin\Debug\Delete BurnOff.exe.config
+c:\users\93543\documents\visual studio 2015\Projects\Delete BurnOff\Delete BurnOff\bin\Debug\Delete BurnOff.exe
+c:\users\93543\documents\visual studio 2015\Projects\Delete BurnOff\Delete BurnOff\bin\Debug\Delete BurnOff.pdb
+c:\users\93543\documents\visual studio 2015\Projects\Delete BurnOff\Delete BurnOff\obj\Debug\Delete BurnOff.csprojResolveAssemblyReference.cache
+c:\users\93543\documents\visual studio 2015\Projects\Delete BurnOff\Delete BurnOff\obj\Debug\Delete_BurnOff.Main.resources
+c:\users\93543\documents\visual studio 2015\Projects\Delete BurnOff\Delete BurnOff\obj\Debug\Delete_BurnOff.Properties.Resources.resources
+c:\users\93543\documents\visual studio 2015\Projects\Delete BurnOff\Delete BurnOff\obj\Debug\Delete BurnOff.csproj.GenerateResource.Cache
+c:\users\93543\documents\visual studio 2015\Projects\Delete BurnOff\Delete BurnOff\obj\Debug\Delete BurnOff.exe
+c:\users\93543\documents\visual studio 2015\Projects\Delete BurnOff\Delete BurnOff\obj\Debug\Delete BurnOff.pdb
