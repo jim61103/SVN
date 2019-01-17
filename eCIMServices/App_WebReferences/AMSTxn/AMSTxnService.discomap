@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://10.185.32.192/AMSTxnService.WSDL?xsd=xsd3" filename="AMSTxnService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://10.185.32.192/AMSTxnService.WSDL?xsd=xsd1" filename="AMSTxnService0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://10.185.32.192/AMSTxnService.WSDL?disco" filename="AMSTxnService.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://10.185.32.192/AMSTxnService.WSDL?xsd=xsd0" filename="AMSTxnService1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://10.185.32.192/AMSTxnService.WSDL?xsd=xsd2" filename="AMSTxnService2.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://10.185.32.192/AMSTxnService.WSDL?wsdl" filename="AMSTxnService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://10.185.32.192/AMSTxnService.WSDL?wsdl=wsdl0" filename="AMSTxnService0.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

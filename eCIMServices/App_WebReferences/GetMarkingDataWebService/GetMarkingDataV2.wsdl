@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://amkor.com/GetMarkingWebService/GetMarkingDataV2" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://amkor.com/GetMarkingWebService/GetMarkingDataV2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://amkor.com/GetMarkingWebService/GetMarkingDataV2">
+      <s:import namespace="http://www.w3.org/2001/XMLSchema" />
+      <s:element name="CreateMarkingDataByInSiteLotToFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContainerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RunENV" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Folder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMarkingDataByInSiteLotToFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateMarkingDataByInSiteLotToFolderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMarkingDataByInSiteLotToFolder_V2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContainerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RunENV" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Folder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMarkingDataByInSiteLotToFolder_V2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateMarkingDataByInSiteLotToFolder_V2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMarkingDataByInSiteLot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContainerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RunENV" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMarkingDataByInSiteLotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateMarkingDataByInSiteLotResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMarkingDataByInSiteMO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MFGOrderName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RunENV" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMarkingDataByInSiteMOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateMarkingDataByInSiteMOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMarkingDataByInSiteLot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContainerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RunENV" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMarkingDataByInSiteLotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMarkingDataByInSiteLotResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewGetMarkingDataByInSiteLot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContainerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RunENV" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProgramType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewGetMarkingDataByInSiteLotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewGetMarkingDataByInSiteLotResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryMarkingDataByInsiteLot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContainerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RunENV" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProgramType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryMarkingDataByInsiteLotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryMarkingDataByInsiteLotResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMarkingDataByInSiteLot_Generator">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContainerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RunENV" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMarkingDataByInSiteLot_GeneratorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMarkingDataByInSiteLot_GeneratorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMarkingDataByInSiteMO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MFGOrderName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RunENV" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMarkingDataByInSiteMOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMarkingDataByInSiteMOResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkMarkingDataByPreSO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sPreSO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAutoLotNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oDSPreSO">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="RunENV" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkMarkingDataByPreSOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChkMarkingDataByPreSOResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateMarkingData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InSiteMarkingData">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="MarkingDataFolder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateMarkingDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GenerateMarkingDataResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMarkingDataByCustCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLastTxnId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RunENV" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMarkingDataByCustCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMarkingDataByCustCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMarkingDataByInSiteMO_V2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContainerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RunENV" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMarkingDataByInSiteMO_V2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMarkingDataByInSiteMO_V2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMarkingDataByLot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContainerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RunENV" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Field" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMarkingDataByLotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMarkingDataByLotResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMarkingFlag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContainerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RunENV" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMarkingFlagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateMarkingFlagResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaking4FCeCIM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="asArgXMLStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaking4FCeCIMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMaking4FCeCIMResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateMarkingDataByInSiteLotToFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateMarkingDataByInSiteLotToFolder" />
+  </wsdl:message>
+  <wsdl:message name="CreateMarkingDataByInSiteLotToFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateMarkingDataByInSiteLotToFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateMarkingDataByInSiteLotToFolder_V2SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateMarkingDataByInSiteLotToFolder_V2" />
+  </wsdl:message>
+  <wsdl:message name="CreateMarkingDataByInSiteLotToFolder_V2SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateMarkingDataByInSiteLotToFolder_V2Response" />
+  </wsdl:message>
+  <wsdl:message name="CreateMarkingDataByInSiteLotSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateMarkingDataByInSiteLot" />
+  </wsdl:message>
+  <wsdl:message name="CreateMarkingDataByInSiteLotSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateMarkingDataByInSiteLotResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateMarkingDataByInSiteMOSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateMarkingDataByInSiteMO" />
+  </wsdl:message>
+  <wsdl:message name="CreateMarkingDataByInSiteMOSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateMarkingDataByInSiteMOResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMarkingDataByInSiteLotSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMarkingDataByInSiteLot" />
+  </wsdl:message>
+  <wsdl:message name="GetMarkingDataByInSiteLotSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMarkingDataByInSiteLotResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewGetMarkingDataByInSiteLotSoapIn">
+    <wsdl:part name="parameters" element="tns:NewGetMarkingDataByInSiteLot" />
+  </wsdl:message>
+  <wsdl:message name="NewGetMarkingDataByInSiteLotSoapOut">
+    <wsdl:part name="parameters" element="tns:NewGetMarkingDataByInSiteLotResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryMarkingDataByInsiteLotSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryMarkingDataByInsiteLot" />
+  </wsdl:message>
+  <wsdl:message name="QueryMarkingDataByInsiteLotSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryMarkingDataByInsiteLotResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMarkingDataByInSiteLot_GeneratorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMarkingDataByInSiteLot_Generator" />
+  </wsdl:message>
+  <wsdl:message name="GetMarkingDataByInSiteLot_GeneratorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMarkingDataByInSiteLot_GeneratorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMarkingDataByInSiteMOSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMarkingDataByInSiteMO" />
+  </wsdl:message>
+  <wsdl:message name="GetMarkingDataByInSiteMOSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMarkingDataByInSiteMOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChkMarkingDataByPreSOSoapIn">
+    <wsdl:part name="parameters" element="tns:ChkMarkingDataByPreSO" />
+  </wsdl:message>
+  <wsdl:message name="ChkMarkingDataByPreSOSoapOut">
+    <wsdl:part name="parameters" element="tns:ChkMarkingDataByPreSOResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateMarkingDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateMarkingData" />
+  </wsdl:message>
+  <wsdl:message name="GenerateMarkingDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateMarkingDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMarkingDataByCustCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMarkingDataByCustCode" />
+  </wsdl:message>
+  <wsdl:message name="GetMarkingDataByCustCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMarkingDataByCustCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMarkingDataByInSiteMO_V2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetMarkingDataByInSiteMO_V2" />
+  </wsdl:message>
+  <wsdl:message name="GetMarkingDataByInSiteMO_V2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetMarkingDataByInSiteMO_V2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetMarkingDataByLotSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMarkingDataByLot" />
+  </wsdl:message>
+  <wsdl:message name="GetMarkingDataByLotSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMarkingDataByLotResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMarkingFlagSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMarkingFlag" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMarkingFlagSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMarkingFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMaking4FCeCIMSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMaking4FCeCIM" />
+  </wsdl:message>
+  <wsdl:message name="GetMaking4FCeCIMSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMaking4FCeCIMResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GetMarkingDataV2Soap">
+    <wsdl:operation name="CreateMarkingDataByInSiteLotToFolder">
+      <wsdl:input message="tns:CreateMarkingDataByInSiteLotToFolderSoapIn" />
+      <wsdl:output message="tns:CreateMarkingDataByInSiteLotToFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMarkingDataByInSiteLotToFolder_V2">
+      <wsdl:input message="tns:CreateMarkingDataByInSiteLotToFolder_V2SoapIn" />
+      <wsdl:output message="tns:CreateMarkingDataByInSiteLotToFolder_V2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMarkingDataByInSiteLot">
+      <wsdl:input message="tns:CreateMarkingDataByInSiteLotSoapIn" />
+      <wsdl:output message="tns:CreateMarkingDataByInSiteLotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMarkingDataByInSiteMO">
+      <wsdl:input message="tns:CreateMarkingDataByInSiteMOSoapIn" />
+      <wsdl:output message="tns:CreateMarkingDataByInSiteMOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarkingDataByInSiteLot">
+      <wsdl:input message="tns:GetMarkingDataByInSiteLotSoapIn" />
+      <wsdl:output message="tns:GetMarkingDataByInSiteLotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewGetMarkingDataByInSiteLot">
+      <wsdl:input message="tns:NewGetMarkingDataByInSiteLotSoapIn" />
+      <wsdl:output message="tns:NewGetMarkingDataByInSiteLotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMarkingDataByInsiteLot">
+      <wsdl:input message="tns:QueryMarkingDataByInsiteLotSoapIn" />
+      <wsdl:output message="tns:QueryMarkingDataByInsiteLotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarkingDataByInSiteLot_Generator">
+      <wsdl:input message="tns:GetMarkingDataByInSiteLot_GeneratorSoapIn" />
+      <wsdl:output message="tns:GetMarkingDataByInSiteLot_GeneratorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarkingDataByInSiteMO">
+      <wsdl:input message="tns:GetMarkingDataByInSiteMOSoapIn" />
+      <wsdl:output message="tns:GetMarkingDataByInSiteMOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkMarkingDataByPreSO">
+      <wsdl:input message="tns:ChkMarkingDataByPreSOSoapIn" />
+      <wsdl:output message="tns:ChkMarkingDataByPreSOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateMarkingData">
+      <wsdl:input message="tns:GenerateMarkingDataSoapIn" />
+      <wsdl:output message="tns:GenerateMarkingDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarkingDataByCustCode">
+      <wsdl:input message="tns:GetMarkingDataByCustCodeSoapIn" />
+      <wsdl:output message="tns:GetMarkingDataByCustCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarkingDataByInSiteMO_V2">
+      <wsdl:input message="tns:GetMarkingDataByInSiteMO_V2SoapIn" />
+      <wsdl:output message="tns:GetMarkingDataByInSiteMO_V2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMarkingDataByLot">
+      <wsdl:input message="tns:GetMarkingDataByLotSoapIn" />
+      <wsdl:output message="tns:GetMarkingDataByLotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMarkingFlag">
+      <wsdl:input message="tns:UpdateMarkingFlagSoapIn" />
+      <wsdl:output message="tns:UpdateMarkingFlagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaking4FCeCIM">
+      <wsdl:input message="tns:GetMaking4FCeCIMSoapIn" />
+      <wsdl:output message="tns:GetMaking4FCeCIMSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GetMarkingDataV2Soap" type="tns:GetMarkingDataV2Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateMarkingDataByInSiteLotToFolder">
+      <soap:operation soapAction="http://amkor.com/GetMarkingWebService/GetMarkingDataV2/CreateMarkingDataByInSiteLotToFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMarkingDataByInSiteLotToFolder_V2">
+      <soap:operation soapAction="http://amkor.com/GetMarkingWebService/GetMarkingDataV2/CreateMarkingDataByInSiteLotToFolder_V2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMarkingDataByInSiteLot">
+      <soap:operation soapAction="http://amkor.com/GetMarkingWebService/GetMarkingDataV2/CreateMarkingDataByInSiteLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMarkingDataByInSiteMO">
+      <soap:operation soapAction="http://amkor.com/GetMarkingWebService/GetMarkingDataV2/CreateMarkingDataByInSiteMO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarkingDataByInSiteLot">
+      <soap:operation soapAction="http://amkor.com/GetMarkingWebService/GetMarkingDataV2/GetMarkingDataByInSiteLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewGetMarkingDataByInSiteLot">
+      <soap:operation soapAction="http://amkor.com/GetMarkingWebService/GetMarkingDataV2/NewGetMarkingDataByInSiteLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMarkingDataByInsiteLot">
+      <soap:operation soapAction="http://amkor.com/GetMarkingWebService/GetMarkingDataV2/QueryMarkingDataByInsiteLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarkingDataByInSiteLot_Generator">
+      <soap:operation soapAction="http://amkor.com/GetMarkingWebService/GetMarkingDataV2/GetMarkingDataByInSiteLot_Generator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarkingDataByInSiteMO">
+      <soap:operation soapAction="http://amkor.com/GetMarkingWebService/GetMarkingDataV2/GetMarkingDataByInSiteMO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkMarkingDataByPreSO">
+      <soap:operation soapAction="http://amkor.com/GetMarkingWebService/GetMarkingDataV2/ChkMarkingDataByPreSO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateMarkingData">
+      <soap:operation soapAction="http://amkor.com/GetMarkingWebService/GetMarkingDataV2/GenerateMarkingData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarkingDataByCustCode">
+      <soap:operation soapAction="http://amkor.com/GetMarkingWebService/GetMarkingDataV2/GetMarkingDataByCustCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarkingDataByInSiteMO_V2">
+      <soap:operation soapAction="http://amkor.com/GetMarkingWebService/GetMarkingDataV2/GetMarkingDataByInSiteMO_V2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarkingDataByLot">
+      <soap:operation soapAction="http://amkor.com/GetMarkingWebService/GetMarkingDataV2/GetMarkingDataByLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMarkingFlag">
+      <soap:operation soapAction="http://amkor.com/GetMarkingWebService/GetMarkingDataV2/UpdateMarkingFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaking4FCeCIM">
+      <soap:operation soapAction="http://amkor.com/GetMarkingWebService/GetMarkingDataV2/GetMaking4FCeCIM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GetMarkingDataV2">
+    <wsdl:port name="GetMarkingDataV2Soap" binding="tns:GetMarkingDataV2Soap">
+      <soap:address location="http://10.185.32.198/GetMarkingWebService/GetMarkingDataV2.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,3589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AMSMTSQLExec">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQL" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AMSMTSQLExecResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AMSMTSQLExecRPT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQL" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSMTSQLExecRPTResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AMSDBQueryRPT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQueryRPTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMSDBQueryRPTResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQueryRPT1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFromSYS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQueryRPT1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMSDBQueryRPT1Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQueryREN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFromSYS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQueryRENResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMSDBQueryRENResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMS_UpdateBLOB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sField" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMS_UpdateBLOBResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AMS_GetBLOB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sField" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMS_GetBLOBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sData" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQueryWithExcel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFromSYS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMailAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMailSubject" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQueryWithExcelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMSDBQueryWithExcelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Check_FAIReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLot" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Check_FAIReportResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckMaskInStockByTrackingNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sTrackingNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMasks" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckMaskInStockByTrackingNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckMaskInStockByTrackingNoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMasks" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckMaskPhaseOutByTrackingNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sTrackingNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckMaskPhaseOutByTrackingNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckMaskPhaseOutByTrackingNoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckResourceLogFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LotNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Resource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Recipe" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckResourceLogFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckResourceLogFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecordTestProgramForWS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sRunCardNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecordTestProgramForWSResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetOperInstr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLot" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperInstrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOperInstrResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperSID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLot" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperSIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOperSIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDPGRINDRecipe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLot" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDPGRINDRecipeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDPGRINDRecipeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAMSLotNoByWSLotNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sWSLotNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAMSLotNoByWSLotNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAMSLotNoByWSLotNoResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWSLotNoByAMSLotNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWSLotNoByAMSLotNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWSLotNoByAMSLotNoResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaferListByCustLotId_Equal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCustLotId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaferListByCustLotId_EqualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWaferListByCustLotId_EqualResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaferListByCustLotId_Like">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCustLotId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaferListByCustLotId_LikeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWaferListByCustLotId_LikeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaferListByAMSLotId_Equal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaferListByAMSLotId_EqualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWaferListByAMSLotId_EqualResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaferListByAMSLotId_Like">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaferListByAMSLotId_LikeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWaferListByAMSLotId_LikeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllSubLotByAMSLotId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllSubLotByAMSLotIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllSubLotByAMSLotIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustLotIDbyWaferId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sWaferId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustLotIDbyWaferIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustLotIDbyWaferIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMachineNameByAMSLotId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOperation" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMachineNameByAMSLotIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMachineNameByAMSLotIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAMSLotInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAMSLotInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAMSLotInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTIIASN_DSByBatchNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sBatchNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTIIASN_DSByBatchNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTIIASN_DSByBatchNumberResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LotHold_API_ByAMSLotId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sHoldComments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sHoldReason" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LotHold_API_ByAMSLotIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LotHold_API_ByAMSLotIdResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LotHold_API_ByAMSLotIdwithUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sHoldComments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sHoldReason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFromSYS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LotHold_API_ByAMSLotIdwithUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LotHold_API_ByAMSLotIdwithUserResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LotRelease_API_ByAMSLotId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sComments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFromSYS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LotRelease_API_ByAMSLotIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LotRelease_API_ByAMSLotIdResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LotRelease_API_ByAMSLotIdwithUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sComments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFromSYS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LotRelease_API_ByAMSLotIdwithUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LotRelease_API_ByAMSLotIdwithUserResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LotSplit_API_ByAMSLotId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSplitQty" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="sComments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFromSYS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LotSplit_API_ByAMSLotIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LotSplit_API_ByAMSLotIdResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LotRelease_API_ByAMSLotIdWithHoldComment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReleaseComments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFromSYS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sHoldReason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sHoldComments" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LotRelease_API_ByAMSLotIdWithHoldCommentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LotRelease_API_ByAMSLotIdWithHoldCommentResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEDATAReplyStatusFor8H">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pProcessType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCustLotId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pReplyTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pReplyStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEDATAReplyStatusFor8HResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateEDATAReplyStatusFor8HResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEDATAConvertStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCustLotId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCustPT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pConvertFlag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEDATAConvertStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateEDATAConvertStatusResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEDATAConvertInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCustLotId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCustPT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pConvertTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pConvertQty" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pConvertWaferId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEDATAConvertInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateEDATAConvertInfoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEDATAUploadStatus2Null">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pAMSLot" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCustPT" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEDATAUploadStatus2NullResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateEDATAUploadStatus2NullResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEDATAReplyStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pAMSLot" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCustPT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pReplyStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEDATAReplyStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateEDATAReplyStatusResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EDataFrozen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLotNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EDataFrozenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EDataFrozenResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEDC_Time_OperatorByType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOperator" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEDC_Time_OperatorByTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetEDC_Time_OperatorByTypeResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOperator" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEDC_DataByType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRealLotID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sWaferID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEDC_DataByTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEDC_DataByTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sRealLotID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWaferDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWaferDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateWaferDetailsResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWaferDetailsWithBin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWaferDetailsWithBinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateWaferDetailsWithBinResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EData_UPDWaferID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EData_UPDWaferIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EData_UPDWaferIDResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EData_FQC_RPT_Success">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMSLotID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EData_FQC_RPT_SuccessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EData_FQC_RPT_SuccessResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetF054_StdLogReportByLot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="asParam" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetF054_StdLogReportByLotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetF054_StdLogReportByLotResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AETC_RSC_StatusUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AETC_RSC_StatusUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AETC_RSC_StatusUpdateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PLAT_RSC_StatusUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PLAT_RSC_StatusUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PLAT_RSC_StatusUpdateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ATT_FC_FileTmpeMaint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bContent" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ATT_FC_FileTmpeMaintResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ATT_FC_FileTmpeMaintResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ATT_FC_GetFileTmpe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ATT_FC_GetFileTmpeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ATT_FC_GetFileTmpeResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ATT_FC_GetRecipe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLot" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ATT_FC_GetRecipeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ATT_FC_GetRecipeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyDomainAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyDomainAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerifyDomainAccountResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyDomainAccount2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iExpireIn15Days" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyDomainAccount2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerifyDomainAccount2Result" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="iExpireIn15Days" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDomainServerIP">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDomainServerIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDomainServerIPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetDomainPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNewPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetDomainPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ResetDomainPasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnvInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEnvInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnvInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAPIP">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAPIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAPIPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAPUID">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAPUIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAPUIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAPPWD">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAPPWDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAPPWDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAASIP">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAASIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAASIPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="apiResourceChangeState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sHostName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOperID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sToStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="apiResourceChangeStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apiResourceChangeStateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="apiAmkGroupHoldMaint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sOper" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sHoldReason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sHoldComments" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iTriggerPoint" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAttField" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTargetValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="apiAmkGroupHoldMaintResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="apiAmkGroupHoldMaintWithUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sOper" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sHoldReason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sHoldComments" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iTriggerPoint" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAttField" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTargetValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="apiAmkGroupHoldMaintWithUserResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CTM_UpdateCPToolBLOB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sField" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CTM_UpdateCPToolBLOBResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CTM_GetCPToolBLOB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sField" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CTM_GetCPToolBLOBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sData" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CTM_SendMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sBody" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsBodyHtml" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CTM_SendMailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AES_GetWaferBinData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLot" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AES_GetWaferBinDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AES_GetWaferBinDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AES_UpdateFTPServerFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sWaferLot" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTesters" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AES_UpdateFTPServerFolderResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InlineStockDBQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InlineStockDBQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InlineStockDBQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AESDBQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AESDBQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AESDBQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LEGACYDBQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LEGACYDBQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LEGACYDBQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InlineStockMTSQLExec">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQL" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InlineStockMTSQLExecResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AMSDBQueryForVB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQueryForVBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMSDBQueryForVBResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQL" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMSDBQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQuery1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQuery1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMSDBQuery1Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQuery2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFromSYS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQuery2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMSDBQuery2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQuery3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFromSYS" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bNoRowNothing" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQuery3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMSDBQuery3Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQuery4">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSQL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFromSYS" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSkipTimeCheck" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMSDBQuery4Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMSDBQuery4Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AMSMTSQLExecSoapIn">
+    <wsdl:part name="parameters" element="tns:AMSMTSQLExec" />
+  </wsdl:message>
+  <wsdl:message name="AMSMTSQLExecSoapOut">
+    <wsdl:part name="parameters" element="tns:AMSMTSQLExecResponse" />
+  </wsdl:message>
+  <wsdl:message name="AMSMTSQLExecRPTSoapIn">
+    <wsdl:part name="parameters" element="tns:AMSMTSQLExecRPT" />
+  </wsdl:message>
+  <wsdl:message name="AMSMTSQLExecRPTSoapOut">
+    <wsdl:part name="parameters" element="tns:AMSMTSQLExecRPTResponse" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQueryRPTSoapIn">
+    <wsdl:part name="parameters" element="tns:AMSDBQueryRPT" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQueryRPTSoapOut">
+    <wsdl:part name="parameters" element="tns:AMSDBQueryRPTResponse" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQueryRPT1SoapIn">
+    <wsdl:part name="parameters" element="tns:AMSDBQueryRPT1" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQueryRPT1SoapOut">
+    <wsdl:part name="parameters" element="tns:AMSDBQueryRPT1Response" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQueryRENSoapIn">
+    <wsdl:part name="parameters" element="tns:AMSDBQueryREN" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQueryRENSoapOut">
+    <wsdl:part name="parameters" element="tns:AMSDBQueryRENResponse" />
+  </wsdl:message>
+  <wsdl:message name="AMS_UpdateBLOBSoapIn">
+    <wsdl:part name="parameters" element="tns:AMS_UpdateBLOB" />
+  </wsdl:message>
+  <wsdl:message name="AMS_UpdateBLOBSoapOut">
+    <wsdl:part name="parameters" element="tns:AMS_UpdateBLOBResponse" />
+  </wsdl:message>
+  <wsdl:message name="AMS_GetBLOBSoapIn">
+    <wsdl:part name="parameters" element="tns:AMS_GetBLOB" />
+  </wsdl:message>
+  <wsdl:message name="AMS_GetBLOBSoapOut">
+    <wsdl:part name="parameters" element="tns:AMS_GetBLOBResponse" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQueryWithExcelSoapIn">
+    <wsdl:part name="parameters" element="tns:AMSDBQueryWithExcel" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQueryWithExcelSoapOut">
+    <wsdl:part name="parameters" element="tns:AMSDBQueryWithExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="Check_FAIReportSoapIn">
+    <wsdl:part name="parameters" element="tns:Check_FAIReport" />
+  </wsdl:message>
+  <wsdl:message name="Check_FAIReportSoapOut">
+    <wsdl:part name="parameters" element="tns:Check_FAIReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckMaskInStockByTrackingNoSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckMaskInStockByTrackingNo" />
+  </wsdl:message>
+  <wsdl:message name="CheckMaskInStockByTrackingNoSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckMaskInStockByTrackingNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckMaskPhaseOutByTrackingNoSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckMaskPhaseOutByTrackingNo" />
+  </wsdl:message>
+  <wsdl:message name="CheckMaskPhaseOutByTrackingNoSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckMaskPhaseOutByTrackingNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckResourceLogFileSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckResourceLogFile" />
+  </wsdl:message>
+  <wsdl:message name="CheckResourceLogFileSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckResourceLogFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecordTestProgramForWSSoapIn">
+    <wsdl:part name="parameters" element="tns:RecordTestProgramForWS" />
+  </wsdl:message>
+  <wsdl:message name="RecordTestProgramForWSSoapOut">
+    <wsdl:part name="parameters" element="tns:RecordTestProgramForWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOperInstrSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOperInstr" />
+  </wsdl:message>
+  <wsdl:message name="GetOperInstrSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOperInstrResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOperSIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOperSID" />
+  </wsdl:message>
+  <wsdl:message name="GetOperSIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOperSIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDPGRINDRecipeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDPGRINDRecipe" />
+  </wsdl:message>
+  <wsdl:message name="GetDPGRINDRecipeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDPGRINDRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAMSLotNoByWSLotNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAMSLotNoByWSLotNo" />
+  </wsdl:message>
+  <wsdl:message name="GetAMSLotNoByWSLotNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAMSLotNoByWSLotNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWSLotNoByAMSLotNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWSLotNoByAMSLotNo" />
+  </wsdl:message>
+  <wsdl:message name="GetWSLotNoByAMSLotNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWSLotNoByAMSLotNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWaferListByCustLotId_EqualSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWaferListByCustLotId_Equal" />
+  </wsdl:message>
+  <wsdl:message name="GetWaferListByCustLotId_EqualSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWaferListByCustLotId_EqualResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWaferListByCustLotId_LikeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWaferListByCustLotId_Like" />
+  </wsdl:message>
+  <wsdl:message name="GetWaferListByCustLotId_LikeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWaferListByCustLotId_LikeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWaferListByAMSLotId_EqualSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWaferListByAMSLotId_Equal" />
+  </wsdl:message>
+  <wsdl:message name="GetWaferListByAMSLotId_EqualSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWaferListByAMSLotId_EqualResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWaferListByAMSLotId_LikeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWaferListByAMSLotId_Like" />
+  </wsdl:message>
+  <wsdl:message name="GetWaferListByAMSLotId_LikeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWaferListByAMSLotId_LikeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSubLotByAMSLotIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllSubLotByAMSLotId" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSubLotByAMSLotIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllSubLotByAMSLotIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustLotIDbyWaferIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustLotIDbyWaferId" />
+  </wsdl:message>
+  <wsdl:message name="GetCustLotIDbyWaferIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustLotIDbyWaferIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMachineNameByAMSLotIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMachineNameByAMSLotId" />
+  </wsdl:message>
+  <wsdl:message name="GetMachineNameByAMSLotIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMachineNameByAMSLotIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAMSLotInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAMSLotInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAMSLotInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAMSLotInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTIIASN_DSByBatchNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTIIASN_DSByBatchNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetTIIASN_DSByBatchNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTIIASN_DSByBatchNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="LotHold_API_ByAMSLotIdSoapIn">
+    <wsdl:part name="parameters" element="tns:LotHold_API_ByAMSLotId" />
+  </wsdl:message>
+  <wsdl:message name="LotHold_API_ByAMSLotIdSoapOut">
+    <wsdl:part name="parameters" element="tns:LotHold_API_ByAMSLotIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="LotHold_API_ByAMSLotIdwithUserSoapIn">
+    <wsdl:part name="parameters" element="tns:LotHold_API_ByAMSLotIdwithUser" />
+  </wsdl:message>
+  <wsdl:message name="LotHold_API_ByAMSLotIdwithUserSoapOut">
+    <wsdl:part name="parameters" element="tns:LotHold_API_ByAMSLotIdwithUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="LotRelease_API_ByAMSLotIdSoapIn">
+    <wsdl:part name="parameters" element="tns:LotRelease_API_ByAMSLotId" />
+  </wsdl:message>
+  <wsdl:message name="LotRelease_API_ByAMSLotIdSoapOut">
+    <wsdl:part name="parameters" element="tns:LotRelease_API_ByAMSLotIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="LotRelease_API_ByAMSLotIdwithUserSoapIn">
+    <wsdl:part name="parameters" element="tns:LotRelease_API_ByAMSLotIdwithUser" />
+  </wsdl:message>
+  <wsdl:message name="LotRelease_API_ByAMSLotIdwithUserSoapOut">
+    <wsdl:part name="parameters" element="tns:LotRelease_API_ByAMSLotIdwithUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="LotSplit_API_ByAMSLotIdSoapIn">
+    <wsdl:part name="parameters" element="tns:LotSplit_API_ByAMSLotId" />
+  </wsdl:message>
+  <wsdl:message name="LotSplit_API_ByAMSLotIdSoapOut">
+    <wsdl:part name="parameters" element="tns:LotSplit_API_ByAMSLotIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="LotRelease_API_ByAMSLotIdWithHoldCommentSoapIn">
+    <wsdl:part name="parameters" element="tns:LotRelease_API_ByAMSLotIdWithHoldComment" />
+  </wsdl:message>
+  <wsdl:message name="LotRelease_API_ByAMSLotIdWithHoldCommentSoapOut">
+    <wsdl:part name="parameters" element="tns:LotRelease_API_ByAMSLotIdWithHoldCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEDATAReplyStatusFor8HSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEDATAReplyStatusFor8H" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEDATAReplyStatusFor8HSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEDATAReplyStatusFor8HResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEDATAConvertStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEDATAConvertStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEDATAConvertStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEDATAConvertStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEDATAConvertInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEDATAConvertInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEDATAConvertInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEDATAConvertInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEDATAUploadStatus2NullSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEDATAUploadStatus2Null" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEDATAUploadStatus2NullSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEDATAUploadStatus2NullResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEDATAReplyStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEDATAReplyStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEDATAReplyStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEDATAReplyStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="EDataFrozenSoapIn">
+    <wsdl:part name="parameters" element="tns:EDataFrozen" />
+  </wsdl:message>
+  <wsdl:message name="EDataFrozenSoapOut">
+    <wsdl:part name="parameters" element="tns:EDataFrozenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEDC_Time_OperatorByTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEDC_Time_OperatorByType" />
+  </wsdl:message>
+  <wsdl:message name="GetEDC_Time_OperatorByTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEDC_Time_OperatorByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEDC_DataByTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEDC_DataByType" />
+  </wsdl:message>
+  <wsdl:message name="GetEDC_DataByTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEDC_DataByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWaferDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateWaferDetails" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWaferDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateWaferDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWaferDetailsWithBinSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateWaferDetailsWithBin" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWaferDetailsWithBinSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateWaferDetailsWithBinResponse" />
+  </wsdl:message>
+  <wsdl:message name="EData_UPDWaferIDSoapIn">
+    <wsdl:part name="parameters" element="tns:EData_UPDWaferID" />
+  </wsdl:message>
+  <wsdl:message name="EData_UPDWaferIDSoapOut">
+    <wsdl:part name="parameters" element="tns:EData_UPDWaferIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="EData_FQC_RPT_SuccessSoapIn">
+    <wsdl:part name="parameters" element="tns:EData_FQC_RPT_Success" />
+  </wsdl:message>
+  <wsdl:message name="EData_FQC_RPT_SuccessSoapOut">
+    <wsdl:part name="parameters" element="tns:EData_FQC_RPT_SuccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetF054_StdLogReportByLotSoapIn">
+    <wsdl:part name="parameters" element="tns:GetF054_StdLogReportByLot" />
+  </wsdl:message>
+  <wsdl:message name="GetF054_StdLogReportByLotSoapOut">
+    <wsdl:part name="parameters" element="tns:GetF054_StdLogReportByLotResponse" />
+  </wsdl:message>
+  <wsdl:message name="AETC_RSC_StatusUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:AETC_RSC_StatusUpdate" />
+  </wsdl:message>
+  <wsdl:message name="AETC_RSC_StatusUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:AETC_RSC_StatusUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="PLAT_RSC_StatusUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:PLAT_RSC_StatusUpdate" />
+  </wsdl:message>
+  <wsdl:message name="PLAT_RSC_StatusUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:PLAT_RSC_StatusUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ATT_FC_FileTmpeMaintSoapIn">
+    <wsdl:part name="parameters" element="tns:ATT_FC_FileTmpeMaint" />
+  </wsdl:message>
+  <wsdl:message name="ATT_FC_FileTmpeMaintSoapOut">
+    <wsdl:part name="parameters" element="tns:ATT_FC_FileTmpeMaintResponse" />
+  </wsdl:message>
+  <wsdl:message name="ATT_FC_GetFileTmpeSoapIn">
+    <wsdl:part name="parameters" element="tns:ATT_FC_GetFileTmpe" />
+  </wsdl:message>
+  <wsdl:message name="ATT_FC_GetFileTmpeSoapOut">
+    <wsdl:part name="parameters" element="tns:ATT_FC_GetFileTmpeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ATT_FC_GetRecipeSoapIn">
+    <wsdl:part name="parameters" element="tns:ATT_FC_GetRecipe" />
+  </wsdl:message>
+  <wsdl:message name="ATT_FC_GetRecipeSoapOut">
+    <wsdl:part name="parameters" element="tns:ATT_FC_GetRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyDomainAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyDomainAccount" />
+  </wsdl:message>
+  <wsdl:message name="VerifyDomainAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyDomainAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyDomainAccount2SoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyDomainAccount2" />
+  </wsdl:message>
+  <wsdl:message name="VerifyDomainAccount2SoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyDomainAccount2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainServerIPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDomainServerIP" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainServerIPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDomainServerIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetDomainPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetDomainPassword" />
+  </wsdl:message>
+  <wsdl:message name="ResetDomainPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetDomainPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnvInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnvInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetEnvInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnvInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAPIPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAPIP" />
+  </wsdl:message>
+  <wsdl:message name="GetAPIPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAPIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAPUIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAPUID" />
+  </wsdl:message>
+  <wsdl:message name="GetAPUIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAPUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAPPWDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAPPWD" />
+  </wsdl:message>
+  <wsdl:message name="GetAPPWDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAPPWDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAASIPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAASIP" />
+  </wsdl:message>
+  <wsdl:message name="GetAASIPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAASIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="apiResourceChangeStateSoapIn">
+    <wsdl:part name="parameters" element="tns:apiResourceChangeState" />
+  </wsdl:message>
+  <wsdl:message name="apiResourceChangeStateSoapOut">
+    <wsdl:part name="parameters" element="tns:apiResourceChangeStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="apiAmkGroupHoldMaintSoapIn">
+    <wsdl:part name="parameters" element="tns:apiAmkGroupHoldMaint" />
+  </wsdl:message>
+  <wsdl:message name="apiAmkGroupHoldMaintSoapOut">
+    <wsdl:part name="parameters" element="tns:apiAmkGroupHoldMaintResponse" />
+  </wsdl:message>
+  <wsdl:message name="apiAmkGroupHoldMaintWithUserSoapIn">
+    <wsdl:part name="parameters" element="tns:apiAmkGroupHoldMaintWithUser" />
+  </wsdl:message>
+  <wsdl:message name="apiAmkGroupHoldMaintWithUserSoapOut">
+    <wsdl:part name="parameters" element="tns:apiAmkGroupHoldMaintWithUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="CTM_UpdateCPToolBLOBSoapIn">
+    <wsdl:part name="parameters" element="tns:CTM_UpdateCPToolBLOB" />
+  </wsdl:message>
+  <wsdl:message name="CTM_UpdateCPToolBLOBSoapOut">
+    <wsdl:part name="parameters" element="tns:CTM_UpdateCPToolBLOBResponse" />
+  </wsdl:message>
+  <wsdl:message name="CTM_GetCPToolBLOBSoapIn">
+    <wsdl:part name="parameters" element="tns:CTM_GetCPToolBLOB" />
+  </wsdl:message>
+  <wsdl:message name="CTM_GetCPToolBLOBSoapOut">
+    <wsdl:part name="parameters" element="tns:CTM_GetCPToolBLOBResponse" />
+  </wsdl:message>
+  <wsdl:message name="CTM_SendMailSoapIn">
+    <wsdl:part name="parameters" element="tns:CTM_SendMail" />
+  </wsdl:message>
+  <wsdl:message name="CTM_SendMailSoapOut">
+    <wsdl:part name="parameters" element="tns:CTM_SendMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="AES_GetWaferBinDataSoapIn">
+    <wsdl:part name="parameters" element="tns:AES_GetWaferBinData" />
+  </wsdl:message>
+  <wsdl:message name="AES_GetWaferBinDataSoapOut">
+    <wsdl:part name="parameters" element="tns:AES_GetWaferBinDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="AES_UpdateFTPServerFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:AES_UpdateFTPServerFolder" />
+  </wsdl:message>
+  <wsdl:message name="AES_UpdateFTPServerFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:AES_UpdateFTPServerFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="InlineStockDBQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:InlineStockDBQuery" />
+  </wsdl:message>
+  <wsdl:message name="InlineStockDBQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:InlineStockDBQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AESDBQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:AESDBQuery" />
+  </wsdl:message>
+  <wsdl:message name="AESDBQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:AESDBQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="LEGACYDBQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:LEGACYDBQuery" />
+  </wsdl:message>
+  <wsdl:message name="LEGACYDBQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:LEGACYDBQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="InlineStockMTSQLExecSoapIn">
+    <wsdl:part name="parameters" element="tns:InlineStockMTSQLExec" />
+  </wsdl:message>
+  <wsdl:message name="InlineStockMTSQLExecSoapOut">
+    <wsdl:part name="parameters" element="tns:InlineStockMTSQLExecResponse" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQueryForVBSoapIn">
+    <wsdl:part name="parameters" element="tns:AMSDBQueryForVB" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQueryForVBSoapOut">
+    <wsdl:part name="parameters" element="tns:AMSDBQueryForVBResponse" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:AMSDBQuery" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:AMSDBQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQuery1SoapIn">
+    <wsdl:part name="parameters" element="tns:AMSDBQuery1" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQuery1SoapOut">
+    <wsdl:part name="parameters" element="tns:AMSDBQuery1Response" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQuery2SoapIn">
+    <wsdl:part name="parameters" element="tns:AMSDBQuery2" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQuery2SoapOut">
+    <wsdl:part name="parameters" element="tns:AMSDBQuery2Response" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQuery3SoapIn">
+    <wsdl:part name="parameters" element="tns:AMSDBQuery3" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQuery3SoapOut">
+    <wsdl:part name="parameters" element="tns:AMSDBQuery3Response" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQuery4SoapIn">
+    <wsdl:part name="parameters" element="tns:AMSDBQuery4" />
+  </wsdl:message>
+  <wsdl:message name="AMSDBQuery4SoapOut">
+    <wsdl:part name="parameters" element="tns:AMSDBQuery4Response" />
+  </wsdl:message>
+  <wsdl:portType name="AMSWebServiceSoap">
+    <wsdl:operation name="AMSMTSQLExec">
+      <wsdl:input message="tns:AMSMTSQLExecSoapIn" />
+      <wsdl:output message="tns:AMSMTSQLExecSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMSMTSQLExecRPT">
+      <wsdl:input message="tns:AMSMTSQLExecRPTSoapIn" />
+      <wsdl:output message="tns:AMSMTSQLExecRPTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQueryRPT">
+      <wsdl:input message="tns:AMSDBQueryRPTSoapIn" />
+      <wsdl:output message="tns:AMSDBQueryRPTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQueryRPT1">
+      <wsdl:input message="tns:AMSDBQueryRPT1SoapIn" />
+      <wsdl:output message="tns:AMSDBQueryRPT1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQueryREN">
+      <wsdl:input message="tns:AMSDBQueryRENSoapIn" />
+      <wsdl:output message="tns:AMSDBQueryRENSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMS_UpdateBLOB">
+      <wsdl:input message="tns:AMS_UpdateBLOBSoapIn" />
+      <wsdl:output message="tns:AMS_UpdateBLOBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMS_GetBLOB">
+      <wsdl:input message="tns:AMS_GetBLOBSoapIn" />
+      <wsdl:output message="tns:AMS_GetBLOBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQueryWithExcel">
+      <wsdl:input message="tns:AMSDBQueryWithExcelSoapIn" />
+      <wsdl:output message="tns:AMSDBQueryWithExcelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Check_FAIReport">
+      <wsdl:input message="tns:Check_FAIReportSoapIn" />
+      <wsdl:output message="tns:Check_FAIReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMaskInStockByTrackingNo">
+      <wsdl:input message="tns:CheckMaskInStockByTrackingNoSoapIn" />
+      <wsdl:output message="tns:CheckMaskInStockByTrackingNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMaskPhaseOutByTrackingNo">
+      <wsdl:input message="tns:CheckMaskPhaseOutByTrackingNoSoapIn" />
+      <wsdl:output message="tns:CheckMaskPhaseOutByTrackingNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckResourceLogFile">
+      <wsdl:input message="tns:CheckResourceLogFileSoapIn" />
+      <wsdl:output message="tns:CheckResourceLogFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecordTestProgramForWS">
+      <wsdl:input message="tns:RecordTestProgramForWSSoapIn" />
+      <wsdl:output message="tns:RecordTestProgramForWSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperInstr">
+      <wsdl:input message="tns:GetOperInstrSoapIn" />
+      <wsdl:output message="tns:GetOperInstrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperSID">
+      <wsdl:input message="tns:GetOperSIDSoapIn" />
+      <wsdl:output message="tns:GetOperSIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDPGRINDRecipe">
+      <wsdl:input message="tns:GetDPGRINDRecipeSoapIn" />
+      <wsdl:output message="tns:GetDPGRINDRecipeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAMSLotNoByWSLotNo">
+      <wsdl:input message="tns:GetAMSLotNoByWSLotNoSoapIn" />
+      <wsdl:output message="tns:GetAMSLotNoByWSLotNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWSLotNoByAMSLotNo">
+      <wsdl:input message="tns:GetWSLotNoByAMSLotNoSoapIn" />
+      <wsdl:output message="tns:GetWSLotNoByAMSLotNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaferListByCustLotId_Equal">
+      <wsdl:input message="tns:GetWaferListByCustLotId_EqualSoapIn" />
+      <wsdl:output message="tns:GetWaferListByCustLotId_EqualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaferListByCustLotId_Like">
+      <wsdl:input message="tns:GetWaferListByCustLotId_LikeSoapIn" />
+      <wsdl:output message="tns:GetWaferListByCustLotId_LikeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaferListByAMSLotId_Equal">
+      <wsdl:input message="tns:GetWaferListByAMSLotId_EqualSoapIn" />
+      <wsdl:output message="tns:GetWaferListByAMSLotId_EqualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaferListByAMSLotId_Like">
+      <wsdl:input message="tns:GetWaferListByAMSLotId_LikeSoapIn" />
+      <wsdl:output message="tns:GetWaferListByAMSLotId_LikeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubLotByAMSLotId">
+      <wsdl:input message="tns:GetAllSubLotByAMSLotIdSoapIn" />
+      <wsdl:output message="tns:GetAllSubLotByAMSLotIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustLotIDbyWaferId">
+      <wsdl:input message="tns:GetCustLotIDbyWaferIdSoapIn" />
+      <wsdl:output message="tns:GetCustLotIDbyWaferIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineNameByAMSLotId">
+      <wsdl:input message="tns:GetMachineNameByAMSLotIdSoapIn" />
+      <wsdl:output message="tns:GetMachineNameByAMSLotIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAMSLotInfo">
+      <wsdl:input message="tns:GetAMSLotInfoSoapIn" />
+      <wsdl:output message="tns:GetAMSLotInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTIIASN_DSByBatchNumber">
+      <wsdl:input message="tns:GetTIIASN_DSByBatchNumberSoapIn" />
+      <wsdl:output message="tns:GetTIIASN_DSByBatchNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LotHold_API_ByAMSLotId">
+      <wsdl:input message="tns:LotHold_API_ByAMSLotIdSoapIn" />
+      <wsdl:output message="tns:LotHold_API_ByAMSLotIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LotHold_API_ByAMSLotIdwithUser">
+      <wsdl:input message="tns:LotHold_API_ByAMSLotIdwithUserSoapIn" />
+      <wsdl:output message="tns:LotHold_API_ByAMSLotIdwithUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LotRelease_API_ByAMSLotId">
+      <wsdl:input message="tns:LotRelease_API_ByAMSLotIdSoapIn" />
+      <wsdl:output message="tns:LotRelease_API_ByAMSLotIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LotRelease_API_ByAMSLotIdwithUser">
+      <wsdl:input message="tns:LotRelease_API_ByAMSLotIdwithUserSoapIn" />
+      <wsdl:output message="tns:LotRelease_API_ByAMSLotIdwithUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LotSplit_API_ByAMSLotId">
+      <wsdl:input message="tns:LotSplit_API_ByAMSLotIdSoapIn" />
+      <wsdl:output message="tns:LotSplit_API_ByAMSLotIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LotRelease_API_ByAMSLotIdWithHoldComment">
+      <wsdl:input message="tns:LotRelease_API_ByAMSLotIdWithHoldCommentSoapIn" />
+      <wsdl:output message="tns:LotRelease_API_ByAMSLotIdWithHoldCommentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEDATAReplyStatusFor8H">
+      <wsdl:input message="tns:UpdateEDATAReplyStatusFor8HSoapIn" />
+      <wsdl:output message="tns:UpdateEDATAReplyStatusFor8HSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEDATAConvertStatus">
+      <wsdl:input message="tns:UpdateEDATAConvertStatusSoapIn" />
+      <wsdl:output message="tns:UpdateEDATAConvertStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEDATAConvertInfo">
+      <wsdl:input message="tns:UpdateEDATAConvertInfoSoapIn" />
+      <wsdl:output message="tns:UpdateEDATAConvertInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEDATAUploadStatus2Null">
+      <wsdl:input message="tns:UpdateEDATAUploadStatus2NullSoapIn" />
+      <wsdl:output message="tns:UpdateEDATAUploadStatus2NullSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEDATAReplyStatus">
+      <wsdl:input message="tns:UpdateEDATAReplyStatusSoapIn" />
+      <wsdl:output message="tns:UpdateEDATAReplyStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EDataFrozen">
+      <wsdl:input message="tns:EDataFrozenSoapIn" />
+      <wsdl:output message="tns:EDataFrozenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEDC_Time_OperatorByType">
+      <wsdl:input message="tns:GetEDC_Time_OperatorByTypeSoapIn" />
+      <wsdl:output message="tns:GetEDC_Time_OperatorByTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEDC_DataByType">
+      <wsdl:input message="tns:GetEDC_DataByTypeSoapIn" />
+      <wsdl:output message="tns:GetEDC_DataByTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWaferDetails">
+      <wsdl:input message="tns:UpdateWaferDetailsSoapIn" />
+      <wsdl:output message="tns:UpdateWaferDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWaferDetailsWithBin">
+      <wsdl:input message="tns:UpdateWaferDetailsWithBinSoapIn" />
+      <wsdl:output message="tns:UpdateWaferDetailsWithBinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EData_UPDWaferID">
+      <wsdl:input message="tns:EData_UPDWaferIDSoapIn" />
+      <wsdl:output message="tns:EData_UPDWaferIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EData_FQC_RPT_Success">
+      <wsdl:input message="tns:EData_FQC_RPT_SuccessSoapIn" />
+      <wsdl:output message="tns:EData_FQC_RPT_SuccessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetF054_StdLogReportByLot">
+      <wsdl:input message="tns:GetF054_StdLogReportByLotSoapIn" />
+      <wsdl:output message="tns:GetF054_StdLogReportByLotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AETC_RSC_StatusUpdate">
+      <wsdl:input message="tns:AETC_RSC_StatusUpdateSoapIn" />
+      <wsdl:output message="tns:AETC_RSC_StatusUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PLAT_RSC_StatusUpdate">
+      <wsdl:input message="tns:PLAT_RSC_StatusUpdateSoapIn" />
+      <wsdl:output message="tns:PLAT_RSC_StatusUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ATT_FC_FileTmpeMaint">
+      <wsdl:input message="tns:ATT_FC_FileTmpeMaintSoapIn" />
+      <wsdl:output message="tns:ATT_FC_FileTmpeMaintSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ATT_FC_GetFileTmpe">
+      <wsdl:input message="tns:ATT_FC_GetFileTmpeSoapIn" />
+      <wsdl:output message="tns:ATT_FC_GetFileTmpeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ATT_FC_GetRecipe">
+      <wsdl:input message="tns:ATT_FC_GetRecipeSoapIn" />
+      <wsdl:output message="tns:ATT_FC_GetRecipeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyDomainAccount">
+      <wsdl:input message="tns:VerifyDomainAccountSoapIn" />
+      <wsdl:output message="tns:VerifyDomainAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyDomainAccount2">
+      <wsdl:input message="tns:VerifyDomainAccount2SoapIn" />
+      <wsdl:output message="tns:VerifyDomainAccount2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainServerIP">
+      <wsdl:input message="tns:GetDomainServerIPSoapIn" />
+      <wsdl:output message="tns:GetDomainServerIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetDomainPassword">
+      <wsdl:input message="tns:ResetDomainPasswordSoapIn" />
+      <wsdl:output message="tns:ResetDomainPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnvInfo">
+      <wsdl:input message="tns:GetEnvInfoSoapIn" />
+      <wsdl:output message="tns:GetEnvInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAPIP">
+      <wsdl:input message="tns:GetAPIPSoapIn" />
+      <wsdl:output message="tns:GetAPIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAPUID">
+      <wsdl:input message="tns:GetAPUIDSoapIn" />
+      <wsdl:output message="tns:GetAPUIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAPPWD">
+      <wsdl:input message="tns:GetAPPWDSoapIn" />
+      <wsdl:output message="tns:GetAPPWDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAASIP">
+      <wsdl:input message="tns:GetAASIPSoapIn" />
+      <wsdl:output message="tns:GetAASIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="apiResourceChangeState">
+      <wsdl:input message="tns:apiResourceChangeStateSoapIn" />
+      <wsdl:output message="tns:apiResourceChangeStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="apiAmkGroupHoldMaint">
+      <wsdl:input message="tns:apiAmkGroupHoldMaintSoapIn" />
+      <wsdl:output message="tns:apiAmkGroupHoldMaintSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="apiAmkGroupHoldMaintWithUser">
+      <wsdl:input message="tns:apiAmkGroupHoldMaintWithUserSoapIn" />
+      <wsdl:output message="tns:apiAmkGroupHoldMaintWithUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CTM_UpdateCPToolBLOB">
+      <wsdl:input message="tns:CTM_UpdateCPToolBLOBSoapIn" />
+      <wsdl:output message="tns:CTM_UpdateCPToolBLOBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CTM_GetCPToolBLOB">
+      <wsdl:input message="tns:CTM_GetCPToolBLOBSoapIn" />
+      <wsdl:output message="tns:CTM_GetCPToolBLOBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CTM_SendMail">
+      <wsdl:input message="tns:CTM_SendMailSoapIn" />
+      <wsdl:output message="tns:CTM_SendMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AES_GetWaferBinData">
+      <wsdl:input message="tns:AES_GetWaferBinDataSoapIn" />
+      <wsdl:output message="tns:AES_GetWaferBinDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AES_UpdateFTPServerFolder">
+      <wsdl:input message="tns:AES_UpdateFTPServerFolderSoapIn" />
+      <wsdl:output message="tns:AES_UpdateFTPServerFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InlineStockDBQuery">
+      <wsdl:input message="tns:InlineStockDBQuerySoapIn" />
+      <wsdl:output message="tns:InlineStockDBQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AESDBQuery">
+      <wsdl:input message="tns:AESDBQuerySoapIn" />
+      <wsdl:output message="tns:AESDBQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LEGACYDBQuery">
+      <wsdl:input message="tns:LEGACYDBQuerySoapIn" />
+      <wsdl:output message="tns:LEGACYDBQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InlineStockMTSQLExec">
+      <wsdl:input message="tns:InlineStockMTSQLExecSoapIn" />
+      <wsdl:output message="tns:InlineStockMTSQLExecSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQueryForVB">
+      <wsdl:input message="tns:AMSDBQueryForVBSoapIn" />
+      <wsdl:output message="tns:AMSDBQueryForVBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery">
+      <wsdl:input message="tns:AMSDBQuerySoapIn" />
+      <wsdl:output message="tns:AMSDBQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery1">
+      <wsdl:input message="tns:AMSDBQuery1SoapIn" />
+      <wsdl:output message="tns:AMSDBQuery1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery2">
+      <wsdl:input message="tns:AMSDBQuery2SoapIn" />
+      <wsdl:output message="tns:AMSDBQuery2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery3">
+      <wsdl:input message="tns:AMSDBQuery3SoapIn" />
+      <wsdl:output message="tns:AMSDBQuery3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery4">
+      <wsdl:input message="tns:AMSDBQuery4SoapIn" />
+      <wsdl:output message="tns:AMSDBQuery4SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AMSWebServiceSoap" type="tns:AMSWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AMSMTSQLExec">
+      <soap:operation soapAction="http://tempuri.org/AMSMTSQLExec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSMTSQLExecRPT">
+      <soap:operation soapAction="http://tempuri.org/AMSMTSQLExecRPT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQueryRPT">
+      <soap:operation soapAction="http://tempuri.org/AMSDBQueryRPT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQueryRPT1">
+      <soap:operation soapAction="http://tempuri.org/AMSDBQueryRPT1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQueryREN">
+      <soap:operation soapAction="http://tempuri.org/AMSDBQueryREN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMS_UpdateBLOB">
+      <soap:operation soapAction="http://tempuri.org/AMS_UpdateBLOB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMS_GetBLOB">
+      <soap:operation soapAction="http://tempuri.org/AMS_GetBLOB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQueryWithExcel">
+      <soap:operation soapAction="http://tempuri.org/AMSDBQueryWithExcel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Check_FAIReport">
+      <soap:operation soapAction="http://tempuri.org/Check_FAIReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMaskInStockByTrackingNo">
+      <soap:operation soapAction="http://tempuri.org/CheckMaskInStockByTrackingNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMaskPhaseOutByTrackingNo">
+      <soap:operation soapAction="http://tempuri.org/CheckMaskPhaseOutByTrackingNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckResourceLogFile">
+      <soap:operation soapAction="http://tempuri.org/CheckResourceLogFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecordTestProgramForWS">
+      <soap:operation soapAction="http://tempuri.org/RecordTestProgramForWS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperInstr">
+      <soap:operation soapAction="http://tempuri.org/GetOperInstr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperSID">
+      <soap:operation soapAction="http://tempuri.org/GetOperSID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDPGRINDRecipe">
+      <soap:operation soapAction="http://tempuri.org/GetDPGRINDRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAMSLotNoByWSLotNo">
+      <soap:operation soapAction="http://tempuri.org/GetAMSLotNoByWSLotNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWSLotNoByAMSLotNo">
+      <soap:operation soapAction="http://tempuri.org/GetWSLotNoByAMSLotNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaferListByCustLotId_Equal">
+      <soap:operation soapAction="http://tempuri.org/GetWaferListByCustLotId_Equal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaferListByCustLotId_Like">
+      <soap:operation soapAction="http://tempuri.org/GetWaferListByCustLotId_Like" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaferListByAMSLotId_Equal">
+      <soap:operation soapAction="http://tempuri.org/GetWaferListByAMSLotId_Equal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaferListByAMSLotId_Like">
+      <soap:operation soapAction="http://tempuri.org/GetWaferListByAMSLotId_Like" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubLotByAMSLotId">
+      <soap:operation soapAction="http://tempuri.org/GetAllSubLotByAMSLotId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustLotIDbyWaferId">
+      <soap:operation soapAction="http://tempuri.org/GetCustLotIDbyWaferId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineNameByAMSLotId">
+      <soap:operation soapAction="http://tempuri.org/GetMachineNameByAMSLotId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAMSLotInfo">
+      <soap:operation soapAction="http://tempuri.org/GetAMSLotInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTIIASN_DSByBatchNumber">
+      <soap:operation soapAction="http://tempuri.org/GetTIIASN_DSByBatchNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LotHold_API_ByAMSLotId">
+      <soap:operation soapAction="http://tempuri.org/LotHold_API_ByAMSLotId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LotHold_API_ByAMSLotIdwithUser">
+      <soap:operation soapAction="http://tempuri.org/LotHold_API_ByAMSLotIdwithUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LotRelease_API_ByAMSLotId">
+      <soap:operation soapAction="http://tempuri.org/LotRelease_API_ByAMSLotId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LotRelease_API_ByAMSLotIdwithUser">
+      <soap:operation soapAction="http://tempuri.org/LotRelease_API_ByAMSLotIdwithUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LotSplit_API_ByAMSLotId">
+      <soap:operation soapAction="http://tempuri.org/LotSplit_API_ByAMSLotId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LotRelease_API_ByAMSLotIdWithHoldComment">
+      <soap:operation soapAction="http://tempuri.org/LotRelease_API_ByAMSLotIdWithHoldComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEDATAReplyStatusFor8H">
+      <soap:operation soapAction="http://tempuri.org/UpdateEDATAReplyStatusFor8H" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEDATAConvertStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateEDATAConvertStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEDATAConvertInfo">
+      <soap:operation soapAction="http://tempuri.org/UpdateEDATAConvertInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEDATAUploadStatus2Null">
+      <soap:operation soapAction="http://tempuri.org/UpdateEDATAUploadStatus2Null" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEDATAReplyStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateEDATAReplyStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EDataFrozen">
+      <soap:operation soapAction="http://tempuri.org/EDataFrozen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEDC_Time_OperatorByType">
+      <soap:operation soapAction="http://tempuri.org/GetEDC_Time_OperatorByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEDC_DataByType">
+      <soap:operation soapAction="http://tempuri.org/GetEDC_DataByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWaferDetails">
+      <soap:operation soapAction="http://tempuri.org/UpdateWaferDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWaferDetailsWithBin">
+      <soap:operation soapAction="http://tempuri.org/UpdateWaferDetailsWithBin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EData_UPDWaferID">
+      <soap:operation soapAction="http://tempuri.org/EData_UPDWaferID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EData_FQC_RPT_Success">
+      <soap:operation soapAction="http://tempuri.org/EData_FQC_RPT_Success" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetF054_StdLogReportByLot">
+      <soap:operation soapAction="http://tempuri.org/GetF054_StdLogReportByLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AETC_RSC_StatusUpdate">
+      <soap:operation soapAction="http://tempuri.org/AETC_RSC_StatusUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PLAT_RSC_StatusUpdate">
+      <soap:operation soapAction="http://tempuri.org/PLAT_RSC_StatusUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ATT_FC_FileTmpeMaint">
+      <soap:operation soapAction="http://tempuri.org/ATT_FC_FileTmpeMaint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ATT_FC_GetFileTmpe">
+      <soap:operation soapAction="http://tempuri.org/ATT_FC_GetFileTmpe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ATT_FC_GetRecipe">
+      <soap:operation soapAction="http://tempuri.org/ATT_FC_GetRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyDomainAccount">
+      <soap:operation soapAction="http://tempuri.org/VerifyDomainAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyDomainAccount2">
+      <soap:operation soapAction="http://tempuri.org/VerifyDomainAccount2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainServerIP">
+      <soap:operation soapAction="http://tempuri.org/GetDomainServerIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetDomainPassword">
+      <soap:operation soapAction="http://tempuri.org/ResetDomainPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnvInfo">
+      <soap:operation soapAction="http://tempuri.org/GetEnvInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAPIP">
+      <soap:operation soapAction="http://tempuri.org/GetAPIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAPUID">
+      <soap:operation soapAction="http://tempuri.org/GetAPUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAPPWD">
+      <soap:operation soapAction="http://tempuri.org/GetAPPWD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAASIP">
+      <soap:operation soapAction="http://tempuri.org/GetAASIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="apiResourceChangeState">
+      <soap:operation soapAction="http://tempuri.org/apiResourceChangeState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="apiAmkGroupHoldMaint">
+      <soap:operation soapAction="http://tempuri.org/apiAmkGroupHoldMaint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="apiAmkGroupHoldMaintWithUser">
+      <soap:operation soapAction="http://tempuri.org/apiAmkGroupHoldMaintWithUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CTM_UpdateCPToolBLOB">
+      <soap:operation soapAction="http://tempuri.org/CTM_UpdateCPToolBLOB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CTM_GetCPToolBLOB">
+      <soap:operation soapAction="http://tempuri.org/CTM_GetCPToolBLOB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CTM_SendMail">
+      <soap:operation soapAction="http://tempuri.org/CTM_SendMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AES_GetWaferBinData">
+      <soap:operation soapAction="http://tempuri.org/AES_GetWaferBinData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AES_UpdateFTPServerFolder">
+      <soap:operation soapAction="http://tempuri.org/AES_UpdateFTPServerFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InlineStockDBQuery">
+      <soap:operation soapAction="http://tempuri.org/InlineStockDBQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AESDBQuery">
+      <soap:operation soapAction="http://tempuri.org/AESDBQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LEGACYDBQuery">
+      <soap:operation soapAction="http://tempuri.org/LEGACYDBQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InlineStockMTSQLExec">
+      <soap:operation soapAction="http://tempuri.org/InlineStockMTSQLExec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQueryForVB">
+      <soap:operation soapAction="http://tempuri.org/AMSDBQueryForVB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery">
+      <soap:operation soapAction="http://tempuri.org/AMSDBQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery1">
+      <soap:operation soapAction="http://tempuri.org/AMSDBQuery1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery2">
+      <soap:operation soapAction="http://tempuri.org/AMSDBQuery2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery3">
+      <soap:operation soapAction="http://tempuri.org/AMSDBQuery3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery4">
+      <soap:operation soapAction="http://tempuri.org/AMSDBQuery4" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AMSWebServiceSoap12" type="tns:AMSWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AMSMTSQLExec">
+      <soap12:operation soapAction="http://tempuri.org/AMSMTSQLExec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSMTSQLExecRPT">
+      <soap12:operation soapAction="http://tempuri.org/AMSMTSQLExecRPT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQueryRPT">
+      <soap12:operation soapAction="http://tempuri.org/AMSDBQueryRPT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQueryRPT1">
+      <soap12:operation soapAction="http://tempuri.org/AMSDBQueryRPT1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQueryREN">
+      <soap12:operation soapAction="http://tempuri.org/AMSDBQueryREN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMS_UpdateBLOB">
+      <soap12:operation soapAction="http://tempuri.org/AMS_UpdateBLOB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMS_GetBLOB">
+      <soap12:operation soapAction="http://tempuri.org/AMS_GetBLOB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQueryWithExcel">
+      <soap12:operation soapAction="http://tempuri.org/AMSDBQueryWithExcel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Check_FAIReport">
+      <soap12:operation soapAction="http://tempuri.org/Check_FAIReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMaskInStockByTrackingNo">
+      <soap12:operation soapAction="http://tempuri.org/CheckMaskInStockByTrackingNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMaskPhaseOutByTrackingNo">
+      <soap12:operation soapAction="http://tempuri.org/CheckMaskPhaseOutByTrackingNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckResourceLogFile">
+      <soap12:operation soapAction="http://tempuri.org/CheckResourceLogFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecordTestProgramForWS">
+      <soap12:operation soapAction="http://tempuri.org/RecordTestProgramForWS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperInstr">
+      <soap12:operation soapAction="http://tempuri.org/GetOperInstr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperSID">
+      <soap12:operation soapAction="http://tempuri.org/GetOperSID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDPGRINDRecipe">
+      <soap12:operation soapAction="http://tempuri.org/GetDPGRINDRecipe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAMSLotNoByWSLotNo">
+      <soap12:operation soapAction="http://tempuri.org/GetAMSLotNoByWSLotNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWSLotNoByAMSLotNo">
+      <soap12:operation soapAction="http://tempuri.org/GetWSLotNoByAMSLotNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaferListByCustLotId_Equal">
+      <soap12:operation soapAction="http://tempuri.org/GetWaferListByCustLotId_Equal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaferListByCustLotId_Like">
+      <soap12:operation soapAction="http://tempuri.org/GetWaferListByCustLotId_Like" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaferListByAMSLotId_Equal">
+      <soap12:operation soapAction="http://tempuri.org/GetWaferListByAMSLotId_Equal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaferListByAMSLotId_Like">
+      <soap12:operation soapAction="http://tempuri.org/GetWaferListByAMSLotId_Like" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubLotByAMSLotId">
+      <soap12:operation soapAction="http://tempuri.org/GetAllSubLotByAMSLotId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustLotIDbyWaferId">
+      <soap12:operation soapAction="http://tempuri.org/GetCustLotIDbyWaferId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineNameByAMSLotId">
+      <soap12:operation soapAction="http://tempuri.org/GetMachineNameByAMSLotId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAMSLotInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetAMSLotInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTIIASN_DSByBatchNumber">
+      <soap12:operation soapAction="http://tempuri.org/GetTIIASN_DSByBatchNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LotHold_API_ByAMSLotId">
+      <soap12:operation soapAction="http://tempuri.org/LotHold_API_ByAMSLotId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LotHold_API_ByAMSLotIdwithUser">
+      <soap12:operation soapAction="http://tempuri.org/LotHold_API_ByAMSLotIdwithUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LotRelease_API_ByAMSLotId">
+      <soap12:operation soapAction="http://tempuri.org/LotRelease_API_ByAMSLotId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LotRelease_API_ByAMSLotIdwithUser">
+      <soap12:operation soapAction="http://tempuri.org/LotRelease_API_ByAMSLotIdwithUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LotSplit_API_ByAMSLotId">
+      <soap12:operation soapAction="http://tempuri.org/LotSplit_API_ByAMSLotId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LotRelease_API_ByAMSLotIdWithHoldComment">
+      <soap12:operation soapAction="http://tempuri.org/LotRelease_API_ByAMSLotIdWithHoldComment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEDATAReplyStatusFor8H">
+      <soap12:operation soapAction="http://tempuri.org/UpdateEDATAReplyStatusFor8H" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEDATAConvertStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateEDATAConvertStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEDATAConvertInfo">
+      <soap12:operation soapAction="http://tempuri.org/UpdateEDATAConvertInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEDATAUploadStatus2Null">
+      <soap12:operation soapAction="http://tempuri.org/UpdateEDATAUploadStatus2Null" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEDATAReplyStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateEDATAReplyStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EDataFrozen">
+      <soap12:operation soapAction="http://tempuri.org/EDataFrozen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEDC_Time_OperatorByType">
+      <soap12:operation soapAction="http://tempuri.org/GetEDC_Time_OperatorByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEDC_DataByType">
+      <soap12:operation soapAction="http://tempuri.org/GetEDC_DataByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWaferDetails">
+      <soap12:operation soapAction="http://tempuri.org/UpdateWaferDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWaferDetailsWithBin">
+      <soap12:operation soapAction="http://tempuri.org/UpdateWaferDetailsWithBin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EData_UPDWaferID">
+      <soap12:operation soapAction="http://tempuri.org/EData_UPDWaferID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EData_FQC_RPT_Success">
+      <soap12:operation soapAction="http://tempuri.org/EData_FQC_RPT_Success" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetF054_StdLogReportByLot">
+      <soap12:operation soapAction="http://tempuri.org/GetF054_StdLogReportByLot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AETC_RSC_StatusUpdate">
+      <soap12:operation soapAction="http://tempuri.org/AETC_RSC_StatusUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PLAT_RSC_StatusUpdate">
+      <soap12:operation soapAction="http://tempuri.org/PLAT_RSC_StatusUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ATT_FC_FileTmpeMaint">
+      <soap12:operation soapAction="http://tempuri.org/ATT_FC_FileTmpeMaint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ATT_FC_GetFileTmpe">
+      <soap12:operation soapAction="http://tempuri.org/ATT_FC_GetFileTmpe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ATT_FC_GetRecipe">
+      <soap12:operation soapAction="http://tempuri.org/ATT_FC_GetRecipe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyDomainAccount">
+      <soap12:operation soapAction="http://tempuri.org/VerifyDomainAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyDomainAccount2">
+      <soap12:operation soapAction="http://tempuri.org/VerifyDomainAccount2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainServerIP">
+      <soap12:operation soapAction="http://tempuri.org/GetDomainServerIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetDomainPassword">
+      <soap12:operation soapAction="http://tempuri.org/ResetDomainPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnvInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetEnvInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAPIP">
+      <soap12:operation soapAction="http://tempuri.org/GetAPIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAPUID">
+      <soap12:operation soapAction="http://tempuri.org/GetAPUID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAPPWD">
+      <soap12:operation soapAction="http://tempuri.org/GetAPPWD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAASIP">
+      <soap12:operation soapAction="http://tempuri.org/GetAASIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="apiResourceChangeState">
+      <soap12:operation soapAction="http://tempuri.org/apiResourceChangeState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="apiAmkGroupHoldMaint">
+      <soap12:operation soapAction="http://tempuri.org/apiAmkGroupHoldMaint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="apiAmkGroupHoldMaintWithUser">
+      <soap12:operation soapAction="http://tempuri.org/apiAmkGroupHoldMaintWithUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CTM_UpdateCPToolBLOB">
+      <soap12:operation soapAction="http://tempuri.org/CTM_UpdateCPToolBLOB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CTM_GetCPToolBLOB">
+      <soap12:operation soapAction="http://tempuri.org/CTM_GetCPToolBLOB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CTM_SendMail">
+      <soap12:operation soapAction="http://tempuri.org/CTM_SendMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AES_GetWaferBinData">
+      <soap12:operation soapAction="http://tempuri.org/AES_GetWaferBinData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AES_UpdateFTPServerFolder">
+      <soap12:operation soapAction="http://tempuri.org/AES_UpdateFTPServerFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InlineStockDBQuery">
+      <soap12:operation soapAction="http://tempuri.org/InlineStockDBQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AESDBQuery">
+      <soap12:operation soapAction="http://tempuri.org/AESDBQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LEGACYDBQuery">
+      <soap12:operation soapAction="http://tempuri.org/LEGACYDBQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InlineStockMTSQLExec">
+      <soap12:operation soapAction="http://tempuri.org/InlineStockMTSQLExec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQueryForVB">
+      <soap12:operation soapAction="http://tempuri.org/AMSDBQueryForVB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery">
+      <soap12:operation soapAction="http://tempuri.org/AMSDBQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery1">
+      <soap12:operation soapAction="http://tempuri.org/AMSDBQuery1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery2">
+      <soap12:operation soapAction="http://tempuri.org/AMSDBQuery2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery3">
+      <soap12:operation soapAction="http://tempuri.org/AMSDBQuery3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery4">
+      <soap12:operation soapAction="http://tempuri.org/AMSDBQuery4" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AMSWebService">
+    <wsdl:port name="AMSWebServiceSoap" binding="tns:AMSWebServiceSoap">
+      <soap:address location="http://10.185.32.74/AMSWebService/AMSWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AMSWebServiceSoap12" binding="tns:AMSWebServiceSoap12">
+      <soap12:address location="http://10.185.32.74/AMSWebService/AMSWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

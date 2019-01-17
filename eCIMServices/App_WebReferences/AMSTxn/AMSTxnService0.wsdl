@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="Amkor.AMS.Txn" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="Amkor.AMS.Txn" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Amkor.AMS.Txn/Imports">
+      <xsd:import schemaLocation="http://10.185.32.190/AMSTxnService.WSDL?xsd=xsd0" namespace="Amkor.AMS.Txn" />
+      <xsd:import schemaLocation="http://10.185.32.190/AMSTxnService.WSDL?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://10.185.32.190/AMSTxnService.WSDL?xsd=xsd2" />
+      <xsd:import schemaLocation="http://10.185.32.190/AMSTxnService.WSDL?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IClientToServer_AMSTxn_InputMessage">
+    <wsdl:part name="parameters" element="tns:AMSTxn" />
+  </wsdl:message>
+  <wsdl:message name="IClientToServer_AMSTxn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AMSTxnResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientToServer_DataQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataQuery" />
+  </wsdl:message>
+  <wsdl:message name="IClientToServer_DataQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientToServer_AMSDBQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:AMSDBQuery" />
+  </wsdl:message>
+  <wsdl:message name="IClientToServer_AMSDBQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AMSDBQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientToServer_AMSDBQuery1_InputMessage">
+    <wsdl:part name="parameters" element="tns:AMSDBQuery1" />
+  </wsdl:message>
+  <wsdl:message name="IClientToServer_AMSDBQuery1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AMSDBQuery1Response" />
+  </wsdl:message>
+  <wsdl:message name="IClientToServer_AMSMutiExeNonQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:AMSMutiExeNonQuery" />
+  </wsdl:message>
+  <wsdl:message name="IClientToServer_AMSMutiExeNonQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AMSMutiExeNonQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientToServer_AMSMutiExeNonQuery1_InputMessage">
+    <wsdl:part name="parameters" element="tns:AMSMutiExeNonQuery1" />
+  </wsdl:message>
+  <wsdl:message name="IClientToServer_AMSMutiExeNonQuery1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AMSMutiExeNonQuery1Response" />
+  </wsdl:message>
+  <wsdl:portType name="IClientToServer">
+    <wsdl:operation name="AMSTxn">
+      <wsdl:input wsaw:Action="Amkor.AMS.Txn/IClientToServer/AMSTxn" message="tns:IClientToServer_AMSTxn_InputMessage" />
+      <wsdl:output wsaw:Action="Amkor.AMS.Txn/IClientToServer/AMSTxnResponse" message="tns:IClientToServer_AMSTxn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataQuery">
+      <wsdl:input wsaw:Action="Amkor.AMS.Txn/IClientToServer/DataQuery" message="tns:IClientToServer_DataQuery_InputMessage" />
+      <wsdl:output wsaw:Action="Amkor.AMS.Txn/IClientToServer/DataQueryResponse" message="tns:IClientToServer_DataQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery">
+      <wsdl:input wsaw:Action="Amkor.AMS.Txn/IClientToServer/AMSDBQuery" message="tns:IClientToServer_AMSDBQuery_InputMessage" />
+      <wsdl:output wsaw:Action="Amkor.AMS.Txn/IClientToServer/AMSDBQueryResponse" message="tns:IClientToServer_AMSDBQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AMSDBQuery1">
+      <wsdl:input wsaw:Action="Amkor.AMS.Txn/IClientToServer/AMSDBQuery1" message="tns:IClientToServer_AMSDBQuery1_InputMessage" />
+      <wsdl:output wsaw:Action="Amkor.AMS.Txn/IClientToServer/AMSDBQuery1Response" message="tns:IClientToServer_AMSDBQuery1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AMSMutiExeNonQuery">
+      <wsdl:input wsaw:Action="Amkor.AMS.Txn/IClientToServer/AMSMutiExeNonQuery" message="tns:IClientToServer_AMSMutiExeNonQuery_InputMessage" />
+      <wsdl:output wsaw:Action="Amkor.AMS.Txn/IClientToServer/AMSMutiExeNonQueryResponse" message="tns:IClientToServer_AMSMutiExeNonQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AMSMutiExeNonQuery1">
+      <wsdl:input wsaw:Action="Amkor.AMS.Txn/IClientToServer/AMSMutiExeNonQuery1" message="tns:IClientToServer_AMSMutiExeNonQuery1_InputMessage" />
+      <wsdl:output wsaw:Action="Amkor.AMS.Txn/IClientToServer/AMSMutiExeNonQuery1Response" message="tns:IClientToServer_AMSMutiExeNonQuery1_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

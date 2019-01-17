@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="eCIMServices">
+</Property><Property Name="方案檔" Value="D:\ECIM\eCIMServices\eCIMServices_20140919\eCIMServices\eCIMServices.sln">
+</Property><Property Name="使用者選項檔" Value="D:\ECIM\eCIMServices\eCIMServices_20140919\eCIMServices\eCIMServices.suo">
+</Property><Property Name="Date" Value="2014年12月8日">
+</Property><Property Name="Time" Value="下午 14:23">
+</Property><Property Name="記錄檔編號" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="eCIMServices.sln" Description="檔案已成功備份為 D:\ECIM\eCIMServices\eCIMServices_20140919\eCIMServices\Backup\eCIMServices.sln">
+</Event><Event ErrorLevel="0" Project="" Source="eCIMServices.suo" Description="檔案已成功備份為 D:\ECIM\eCIMServices\eCIMServices_20140919\eCIMServices\Backup\eCIMServices.suo">
+</Event><Event ErrorLevel="1" Project="eCIMServices" Source="..\eCIMServices" Description="警告: 專案檔正備份到與原始方案相對路徑不同的相對路徑。不同的資料夾階層架構可能會在開啟或建置備份方案和專案時產生問題。">
+</Event><Event ErrorLevel="0" Project="" Source="eCIMServices.sln" Description="方案轉換成功">
+</Event><Event ErrorLevel="3" Project="" Source="eCIMServices.sln" Description="Converted">
+</Event></UpgradeLog>
